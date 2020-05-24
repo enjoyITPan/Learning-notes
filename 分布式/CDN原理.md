@@ -1,16 +1,16 @@
-##一、什么是CDN
+## 一、什么是CDN
 
 ​       CDN系统能够实时地根据网络流量和各节点的连接、负载状况以及到用户的距离和响应时间等综合信息将用户的请求重新导向离用户最近的服务节点上。
 
 ​       也就是cdn对源站的数据做了备份（比如淘宝的图片，微博的热搜），这样用户访问时不需要到淘宝或者微博的主站去访问数据，可以直接访问离你最近的服务器。比如微博机房在北京，你在三亚，这个时候访问微博，cdn就可能将你引导三亚的机房，加快访问速度。
 
-##二、CDN可以做什么
+## 二、CDN可以做什么
 
 ​	1、加快访问速度
 
 ​	2、减少源站的访问压力
 
-##三、CDN原理
+## 三、CDN原理
 
 3.1、cdn原理依赖于下面两个技术：
 
@@ -40,10 +40,10 @@
 ​        假设您的业务源站域名为 [www.test.com](http://www.test.com) ，当域名接入 CDN 开始使用加速服务后，您
  的用户发起 HTTP 请求，实际的处理流程如图所示：
 
-![img](img/cdn访问流程图.png)
+![img](https://gitee.com/nieyunshu/picture/raw/master/img/20220219221836.png)
 
 - 用户向 [www.test.com](http://www.test.com) 下的某图片资源，如 1.jpg 发起请求，先要向 Local DNS 发
-   起域名解析请求；
+   起域名解析请求；一般称运营商的DNS服务器为`local dns`
 - 当 Local DNS 解析 [www.test.com](http://www.test.com) 时，会发现已经配置了 CNAME
    [www.test.com.cdn.dnsv1.com](http://www.test.com.cdn.dnsv1.com)，解析请求会发送至 Tencent DNS（GSLB），GSLB 为腾
    讯云自主研发的调度体系，会为请求分配最佳节点 IP；
@@ -55,7 +55,7 @@
    获取资源后，结合用户自定义配置的缓存策略（可参考用户指南中缓存时间设置章
    节内容），将资源存储（9），并返回给用户（10），此时请求结束。
 
-##四、参考资料
+## 四、参考资料
 
 1、https://www.jianshu.com/p/14dede92b02f
 

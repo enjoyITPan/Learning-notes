@@ -22,7 +22,7 @@ create table `test`(
 select * from test where class_name = "班级一" limit 900000,10;
 ```
 
-![](img/1716e93e53bffc6d.png)
+![](https://gitee.com/nieyunshu/picture/raw/master/img/20211030162553.png)
 
 
 看mysql执行计划，的确用到了索引，但是查询耗时长达70s。
@@ -43,7 +43,7 @@ select * from test where class_name = "班级一" limit 900000,10;
 select * from test as t1 inner join (select id from test where class_name = "班级一" order by id desc limit 900000,10) t2 USING(id);
 ```
 
-![](img/1716e948bcce8c11.png)
+![](https://gitee.com/nieyunshu/picture/raw/master/img/20211030162600.png)
 
 优化后的效果显著：从70秒变为了0.47秒。
 
@@ -54,6 +54,6 @@ select * from test as t1 inner join (select id from test where class_name = "班
 select * from test where class_name = "班级一" and id > 998507 limit 10;
 ```
 
-![](img/1716e94dc0899eb8.png)
+![](https://gitee.com/nieyunshu/picture/raw/master/img/20211030162606.png)
 
 查询效率依旧很快，0.01秒返回结果

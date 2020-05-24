@@ -80,7 +80,7 @@ commit;
 
 假设我们要部署N台机器，步长需设置为N，每台的初始值依次为0,1,2…N-1那么整个架构就变成了如下图所示：
 
-![image](./img/6d2c9ec8.png)
+![image](https://gitee.com/nieyunshu/picture/raw/master/img/20211030224438.png)
 
 这种架构貌似能够满足性能的需求，但有以下几个缺点：
 
@@ -96,13 +96,13 @@ commit;
 
 - 大致架构如下图所示：
 
-  ![image](./img/5e4ff128.png)
+  ![image](https://gitee.com/nieyunshu/picture/raw/master/img/20211030224443.png)
 
 - Db分库分表情况下，怎么获取id
 
   以test_tag举例，假设现在有三个db（db1,db2,db3）提供test_tag的id服务，这个时候为了让db之间的数据不重复，需要定义内步长和外步长（内步长指单个db每次生成的id段长度，外步长值每次更新时db的初始值需要增加的值）
 
-  ![image-20191011001738536](./img/image-20191011001738536.png)
+  ![image-20191011001738536](https://gitee.com/nieyunshu/picture/raw/master/img/20211030224447.png)
 
 ​       假设现在机器A随机命中了db2，那么机器A拿到的sequence区段一定满足公式[2000+3000*n, 2999+3000*n]，其中n为非负整数，表示sequence段被更新过的次数。那么，这里的n又怎么确定呢？此时，再假设db2对应的sequence表的当前值为x，那么机器A会去取起始值大于或等于x且满足公式[2000+3000*n, 2999+3000*n]的第一个sequence区段。如果x为5999，那拿到的区段就是[8000, 8999]，同时，此sequence表的值也会被更新为8999。所以，db列表的每一项代表的区段都不会冲突。
 

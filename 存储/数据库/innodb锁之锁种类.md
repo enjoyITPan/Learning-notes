@@ -1,6 +1,6 @@
 ## 1、Innodb支持的锁种类
 
-###1.1、[Shared and Exclusive Locks](https://dev.mysql.com/doc/refman/5.5/en/innodb-locking.html#innodb-shared-exclusive-locks) 
+### 1.1、[Shared and Exclusive Locks](https://dev.mysql.com/doc/refman/5.5/en/innodb-locking.html#innodb-shared-exclusive-locks) 
 
 ```mysql
 1、share locks也叫共享锁（s锁、读锁）

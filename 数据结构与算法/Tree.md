@@ -1,4 +1,4 @@
-##一、AVL树
+## 一、AVL树
 
 ### 定义
 
@@ -9,11 +9,11 @@
 
 ### 左旋
 
-![img](img/v2-0a737f5850ac96deec1821c80391a08a_hd.jpg)
+![img](https://gitee.com/nieyunshu/picture/raw/master/img/20220219220901.jpg)
 
 ### 右旋
 
-![img](img/v2-eee97a3e3e45d8cb6668841f6b44191a_hd.jpg)
+![img](https://gitee.com/nieyunshu/picture/raw/master/img/20220219220908.jpg)
 
 ### 代码实现
 
@@ -126,7 +126,7 @@ class TreeNode {
 
 ```
 
-##二、B树
+## 二、B树
 
 ### 定义
 
@@ -140,11 +140,11 @@ class TreeNode {
 >4. 有 *k* 个子节点的非叶子节点拥有 *k* − 1 个键
 >5. 所有的叶子节点都在同一层
 
-##三、B+树
+## 三、B+树
 
 
 
-##四、红黑树
+## 四、红黑树
 
 ### 定义
 
